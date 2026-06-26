@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 const ADMIN_EMAIL = 'asyaunal02@gmail.com'
 
-export async function proxy(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   // Only gate /admin paths (except /admin/login itself)
   if (
     !request.nextUrl.pathname.startsWith('/admin') ||
