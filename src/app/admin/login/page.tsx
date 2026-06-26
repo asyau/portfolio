@@ -14,6 +14,13 @@ export default function AdminLogin() {
     setStatus("loading")
     setErrorMsg("")
 
+    // Client-side allowlist — stops inbox spam from unknown emails
+    if (email.toLowerCase() !== "asyaunal02@gmail.com") {
+      setErrorMsg("Unauthorized email address.")
+      setStatus("error")
+      return
+    }
+
     const supabase = createClient()
     const { error } = await supabase.auth.signInWithOtp({
       email,
