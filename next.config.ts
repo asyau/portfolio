@@ -4,11 +4,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "i.scdn.co", // Spotify album art
+        hostname: "i.scdn.co",
       },
       {
         protocol: "https",
-        hostname: "images.unsplash.com", // For blog photos
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
       },
     ],
   },
