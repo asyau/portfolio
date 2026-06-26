@@ -3,8 +3,8 @@ import { ContactForm } from "@/components/contact-form";
 
 export default function Contact() {
     return (
-        <div className="px-6 md:px-12 lg:px-24 py-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="max-w-4xl">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 lg:px-24 py-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl font-bold mb-4">Contact</h1>
                 <p className="text-muted-foreground mb-12">
                     Have a question or want to work together? Feel free to reach out.

@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, GraduationCap, ArrowRight } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="px-6 md:px-12 lg:px-24">
+    <div className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 lg:px-24">
       {/* Hero Section */}
       <div className="min-h-[calc(100vh-8rem)] flex flex-col justify-center">
         <div className="max-w-4xl space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">

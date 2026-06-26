@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail } from "lucide-react"
 export function Footer() {
     return (
         <footer className="border-t border-border/40 mt-auto">
-            <div className="flex h-16 items-center justify-between px-6 md:px-12 lg:px-24">
+            <div className="mx-auto w-full max-w-screen-2xl flex h-16 items-center justify-between px-6 md:px-12 lg:px-24">
                 <p className="text-sm text-muted-foreground">
                     © 2026 Asya Unal
                 </p>

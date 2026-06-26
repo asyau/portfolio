@@ -20,8 +20,8 @@ const publications = [
 
 export default function Publications() {
     return (
-        <div className="px-6 md:px-12 lg:px-24 py-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="max-w-4xl">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 lg:px-24 py-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl font-bold mb-12">Publications</h1>
 
                 <div className="space-y-6">

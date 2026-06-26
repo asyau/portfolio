@@ -45,7 +45,7 @@ export default function Blog() {
     });
 
     return (
-        <div className="px-6 md:px-12 lg:px-24 py-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 lg:px-24 py-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
                 <div>
                     <h1 className="text-4xl font-bold">Blog</h1>

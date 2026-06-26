@@ -21,7 +21,7 @@ export function Navbar() {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md">
-            <div className="flex h-16 items-center justify-between px-6 md:px-12 lg:px-24">
+            <div className="mx-auto w-full max-w-screen-2xl flex h-16 items-center justify-between px-6 md:px-12 lg:px-24">
                 <Link href="/" className="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity">
                     AU
                 </Link>
