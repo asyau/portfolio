@@ -12,14 +12,18 @@ export const metadata = {
 export default async function Blog() {
   let posts: Post[] = []
 
-  if (process.env.NEXT_PUBLIC_SUPABASE_URL) {
-    const supabase = await createClient()
-    const { data } = await supabase
-      .from("posts")
-      .select("*")
-      .eq("published", true)
-      .order("published_at", { ascending: false })
-    posts = (data ?? []) as Post[]
+  if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    try {
+      const supabase = await createClient()
+      const { data } = await supabase
+        .from("posts")
+        .select("*")
+        .eq("published", true)
+        .order("published_at", { ascending: false })
+      posts = (data ?? []) as Post[]
+    } catch (e) {
+      console.error("[blog] Supabase fetch failed:", e)
+    }
   }
 
   return (
