@@ -102,7 +102,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     <article>
                         <header className="mb-12">
                             <div className="flex items-center gap-3 text-sm text-muted-foreground mb-4">
-                                <span className="px-2 py-0.5 bg-secondary rounded">{post.category}</span>
+                                <span className="px-2 py-0.5 bg-accent-brand/10 text-accent-brand rounded text-xs font-medium">{post.category}</span>
                                 <span className="flex items-center gap-1">
                                     <Calendar className="h-4 w-4" />
                                     {new Date(post.date).toLocaleDateString("en-US", {

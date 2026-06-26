@@ -75,7 +75,7 @@ export default function Projects() {
                                 {project.tech.slice(0, 3).map((t) => (
                                     <span
                                         key={t}
-                                        className="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded"
+                                        className="text-xs px-2 py-0.5 bg-accent-brand/10 text-accent-brand rounded"
                                     >
                                         {t}
                                     </span>

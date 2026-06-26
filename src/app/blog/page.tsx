@@ -57,7 +57,7 @@ export default function Blog() {
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
                             className={`px-3 py-1.5 text-sm rounded-lg transition-all ${activeCategory === cat
-                                    ? "bg-foreground text-background"
+                                    ? "bg-accent-brand text-white"
                                     : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                                 }`}
                         >
@@ -97,7 +97,7 @@ export default function Blog() {
                         </div>
                         <div className="p-6 space-y-3">
                             <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                                <span className="px-2 py-0.5 bg-secondary rounded">{post.category}</span>
+                                <span className="px-2 py-0.5 bg-accent-brand/10 text-accent-brand rounded text-xs font-medium">{post.category}</span>
                                 <span className="flex items-center gap-1">
                                     <Calendar className="h-3 w-3" />
                                     {new Date(post.date).toLocaleDateString("en-US", {
@@ -117,7 +117,7 @@ export default function Blog() {
                             <p className="text-sm text-muted-foreground line-clamp-2">
                                 {post.excerpt}
                             </p>
-                            <div className="flex items-center gap-1 text-sm text-muted-foreground group-hover:text-foreground transition-colors pt-2">
+                            <div className="flex items-center gap-1 text-sm text-accent-brand pt-2 font-medium">
                                 Read more
                                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                             </div>

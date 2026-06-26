@@ -54,7 +54,7 @@ export default function Home() {
           <div className="flex gap-4 pt-4">
             <Link
               href="/projects"
-              className="group inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background rounded-lg font-medium transition-all duration-200 hover:opacity-90"
+              className="group inline-flex items-center gap-2 px-5 py-2.5 bg-accent-brand text-white rounded-lg font-medium transition-all duration-200 hover:opacity-90"
             >
               View Projects
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
