@@ -1,13 +1,7 @@
 import Link from "next/link";
 import { Github, Linkedin, Mail, GraduationCap, ArrowRight } from "lucide-react";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import { HeroSceneClient } from "@/components/hero-scene-client";
 import { FadeIn } from "@/components/fade-in";
-
-const HeroScene = dynamic(
-  () => import("@/components/hero-scene").then((m) => m.HeroScene),
-  { ssr: false, loading: () => null }
-);
 
 export default function Home() {
   return (
@@ -16,9 +10,7 @@ export default function Home() {
       <div className="relative min-h-[calc(100vh-8rem)] flex flex-col justify-center overflow-hidden">
         {/* 3D sphere — right half on desktop, softly behind text on mobile */}
         <div className="absolute inset-0 lg:left-[45%] pointer-events-none select-none">
-          <Suspense fallback={null}>
-            <HeroScene />
-          </Suspense>
+          <HeroSceneClient />
         </div>
 
         {/* Text content */}
