@@ -1,8 +1,11 @@
+import { FadeIn } from "@/components/fade-in";
+
 export default function About() {
     return (
         <div className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 lg:px-24 py-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <h1 className="text-4xl font-bold mb-12">About</h1>
 
+            <FadeIn>
             <div className="grid lg:grid-cols-3 gap-16">
                 <section className="lg:col-span-2 space-y-4">
                     <p className="text-lg text-muted-foreground leading-relaxed">
@@ -68,6 +71,7 @@ export default function About() {
                     </div>
                 </section>
             </div>
+            </FadeIn>
         </div>
     );
 }

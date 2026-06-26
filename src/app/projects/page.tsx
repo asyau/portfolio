@@ -1,6 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { Github, ExternalLink, Play } from "lucide-react";
+import { FadeIn } from "@/components/fade-in";
+import { MotionCardLink } from "@/components/motion-card";
 
 const projects = [
     {
@@ -10,7 +12,7 @@ const projects = [
         github: "https://github.com/asyau/vera",
         period: "Mar 2025 – Present",
         preview: "/projects/vira.png",
-        demo: null, // Coming soon
+        demo: null,
     },
     {
         name: "Bilkent.IO",
@@ -37,77 +39,74 @@ export default function Projects() {
         <div className="mx-auto w-full max-w-screen-2xl px-6 md:px-12 lg:px-24 py-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <h1 className="text-4xl font-bold mb-12">Projects</h1>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {projects.map((project, i) => (
-                    <div
-                        key={i}
-                        className="group rounded-xl border border-border/50 overflow-hidden hover:border-border hover:shadow-lg transition-all duration-300"
-                    >
-                        <div className="relative aspect-video overflow-hidden bg-secondary">
-                            <Image
-                                src={project.preview}
-                                alt={project.name}
-                                fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                            {project.demo && (
-                                <Link
-                                    href={project.demo}
-                                    target="_blank"
-                                    className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity"
-                                >
-                                    <div className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg font-medium">
-                                        <Play className="h-4 w-4 fill-current" />
-                                        Live Demo
-                                    </div>
-                                </Link>
-                            )}
-                        </div>
-                        <div className="p-6 space-y-4">
-                            <div className="flex justify-between items-start">
-                                <h2 className="text-lg font-medium">{project.name}</h2>
-                                <span className="text-xs text-muted-foreground">{project.period}</span>
-                            </div>
-                            <p className="text-sm text-muted-foreground line-clamp-2">
-                                {project.description}
-                            </p>
-                            <div className="flex items-center gap-2 flex-wrap">
-                                {project.tech.slice(0, 3).map((t) => (
-                                    <span
-                                        key={t}
-                                        className="text-xs px-2 py-0.5 bg-accent-brand/10 text-accent-brand rounded"
-                                    >
-                                        {t}
-                                    </span>
-                                ))}
-                                {project.tech.length > 3 && (
-                                    <span className="text-xs text-muted-foreground">
-                                        +{project.tech.length - 3}
-                                    </span>
-                                )}
-                            </div>
-                            <div className="flex items-center gap-4 pt-2">
-                                <Link
-                                    href={project.github}
-                                    target="_blank"
-                                    className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                                >
-                                    <Github className="h-4 w-4" />
-                                    Code
-                                </Link>
+                    <FadeIn key={i} delay={i * 0.08}>
+                        <MotionCardLink
+                            href={project.github}
+                            target="_blank"
+                            className="group rounded-xl border border-border/50 overflow-hidden hover:border-border hover:shadow-lg transition-colors duration-300 flex flex-col h-full"
+                        >
+                            <div className="relative aspect-video overflow-hidden bg-secondary">
+                                <Image
+                                    src={project.preview}
+                                    alt={project.name}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
                                 {project.demo && (
-                                    <Link
+                                    <a
                                         href={project.demo}
                                         target="_blank"
-                                        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                        rel="noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity"
                                     >
-                                        <ExternalLink className="h-4 w-4" />
-                                        Demo
-                                    </Link>
+                                        <div className="flex items-center gap-2 px-4 py-2 bg-white text-black rounded-lg font-medium">
+                                            <Play className="h-4 w-4 fill-current" />
+                                            Live Demo
+                                        </div>
+                                    </a>
                                 )}
                             </div>
-                        </div>
-                    </div>
+                            <div className="p-6 space-y-4 flex-1 flex flex-col">
+                                <div className="flex justify-between items-start">
+                                    <h2 className="text-lg font-medium">{project.name}</h2>
+                                    <span className="text-xs text-muted-foreground">{project.period}</span>
+                                </div>
+                                <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
+                                    {project.description}
+                                </p>
+                                <div className="flex items-center gap-2 flex-wrap">
+                                    {project.tech.slice(0, 3).map((t) => (
+                                        <span
+                                            key={t}
+                                            className="text-xs px-2 py-0.5 bg-accent-brand/10 text-accent-brand rounded"
+                                        >
+                                            {t}
+                                        </span>
+                                    ))}
+                                    {project.tech.length > 3 && (
+                                        <span className="text-xs text-muted-foreground">
+                                            +{project.tech.length - 3}
+                                        </span>
+                                    )}
+                                </div>
+                                <div className="flex items-center gap-4 pt-2">
+                                    <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                        <Github className="h-4 w-4" />
+                                        Code
+                                    </span>
+                                    {project.demo && (
+                                        <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                                            <ExternalLink className="h-4 w-4" />
+                                            Demo
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+                        </MotionCardLink>
+                    </FadeIn>
                 ))}
             </div>
         </div>
